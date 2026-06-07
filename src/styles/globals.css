@@ -58,6 +58,7 @@ img {
   display: block;
 }
 
+/* ── Typography ── */
 .section-label {
   font-size: 0.72rem;
   font-weight: 700;
@@ -69,7 +70,7 @@ img {
 }
 
 .section-title {
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   margin-bottom: 1.25rem;
@@ -78,34 +79,38 @@ img {
 
 .section-sub {
   color: var(--text-2);
-  font-size: 0.97rem;
+  font-size: clamp(0.88rem, 2vw, 0.97rem);
   max-width: 520px;
   line-height: 1.8;
   font-weight: 300;
 }
 
+/* ── Layout ── */
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
+/* ── Buttons ── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   background: var(--accent);
   color: #fff;
   border: none;
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 1.4rem;
   border-radius: var(--radius);
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: clamp(0.85rem, 2vw, 0.92rem);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
   letter-spacing: -0.01em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -117,18 +122,20 @@ img {
 .btn-outline {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   background: transparent;
   color: var(--text);
   border: 1.5px solid var(--border);
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 1.4rem;
   border-radius: var(--radius);
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: clamp(0.85rem, 2vw, 0.92rem);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-outline:hover {
@@ -140,4 +147,229 @@ img {
 .divider {
   height: 1px;
   background: var(--border);
+}
+
+/* ── Navbar responsive ── */
+.nav-links-desktop {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--text);
+}
+
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-mobile-menu.open {
+  display: flex;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-mobile-link:last-child { border-bottom: none; }
+.nav-mobile-link:hover { color: var(--accent); }
+
+.nav-mobile-cta {
+  margin-top: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Hero ── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-visual { display: block; }
+
+/* ── About ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.about-chips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+/* ── Demo ── */
+.demo-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.demo-grid-bot {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* ── Benefits ── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-top: 3rem;
+}
+
+/* ── Footer ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
+
+/* ── CTA buttons ── */
+.cta-btns {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Hero buttons ── */
+.hero-btns {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   BREAKPOINTS
+   ============================================================ */
+
+/* Tablet landscape / small desktop  ≤ 1024px */
+@media (max-width: 1024px) {
+  .hero-grid {
+    gap: 2.5rem;
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait  ≤ 768px */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links-desktop { display: none; }
+  .nav-menu-btn { display: flex; align-items: center; }
+
+  /* Hero */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .hero-visual { display: none; }
+  .hero-btns { justify-content: center; }
+  .section-sub { margin: 0 auto; }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Demo */
+  .demo-grid-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .demo-grid-bot {
+    grid-template-columns: 1fr;
+  }
+
+  /* Benefits */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile  ≤ 480px */
+@media (max-width: 480px) {
+  /* Demo */
+  .demo-grid-top {
+    grid-template-columns: 1fr;
+  }
+
+  /* About chips */
+  .about-chips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About cards */
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Benefits */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Buttons full-width on very small screens */
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-btns,
+  .cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

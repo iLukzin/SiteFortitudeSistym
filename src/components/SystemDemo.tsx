@@ -68,7 +68,7 @@ export default function SystemDemo() {
   const botCards = demoCards.filter(c => c.col === 'bot');
 
   return (
-    <section id="sistema" style={{ padding: '5.5rem 2rem' }}>
+    <section id="sistema" style={{ padding: 'clamp(3rem,8vw,5.5rem) clamp(1rem,4vw,2rem)' }}>
       <div className="container" ref={ref}>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.65 }}>
           <div className="section-label">Demonstração</div>
@@ -77,12 +77,12 @@ export default function SystemDemo() {
         </motion.div>
 
         {/* Top row — 3 cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginBottom: '1.25rem' }}>
+        <div className="demo-grid-top">
           {topCards.map((card, i) => <Card key={card.title} card={card} i={i} inView={inView} />)}
         </div>
 
         {/* Bottom row — 2 cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.25rem' }}>
+        <div className="demo-grid-bot">
           {botCards.map((card, i) => <Card key={card.title} card={card} i={i + topCards.length} inView={inView} />)}
         </div>
       </div>
