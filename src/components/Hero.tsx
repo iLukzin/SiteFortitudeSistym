@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SystemMockup from './SystemMockup';
 
+const WHATSAPP_LINK =
+  'https://wa.me/5534988018483?text=Olá!%20Gostaria%20de%20solicitar%20uma%20demonstração%20do%20FortitudeSistym.';
+
 export default function Hero() {
   return (
     <section
@@ -128,12 +131,12 @@ export default function Hero() {
           </p>
 
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <Link href="#" className="btn-primary">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
               → Solicitar Demonstração
-            </Link>
-            <Link href="#sistema" className="btn-outline">
+            </a>
+            <a href="#sistema" className="btn-outline">
               Conhecer Sistema
-            </Link>
+            </a>
           </div>
         </motion.div>
 

@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
+const WHATSAPP_LINK =
+  'https://wa.me/5534988018483?text=Olá!%20Gostaria%20de%20solicitar%20uma%20demonstração%20do%20FortitudeSistym.';
+
 const navLinks = [
   { label: 'Sobre', href: '#sobre' },
   { label: 'Sistema', href: '#sistema' },
@@ -47,6 +50,7 @@ export default function Navbar() {
           fontSize: '1.2rem',
           color: 'var(--text)',
           letterSpacing: '-0.03em',
+          textDecoration: 'none',
         }}
       >
         Fortitude<span style={{ color: 'var(--accent)' }}>Sistym</span>
@@ -68,6 +72,7 @@ export default function Navbar() {
                 fontSize: '0.88rem',
                 fontWeight: 400,
                 transition: 'color 0.2s',
+                textDecoration: 'none',
               }}
               onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'var(--accent)')}
               onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-2)')}
@@ -78,7 +83,10 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <button
+      <a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
           background: 'var(--accent)',
           color: '#fff',
@@ -91,6 +99,9 @@ export default function Navbar() {
           cursor: 'pointer',
           letterSpacing: '-0.01em',
           transition: 'all 0.2s',
+          textDecoration: 'none',
+          display: 'inline-flex',
+          alignItems: 'center',
         }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLElement).style.background = 'var(--accent-2)';
@@ -102,7 +113,7 @@ export default function Navbar() {
         }}
       >
         Solicitar Demo
-      </button>
+      </a>
     </nav>
   );
 }
