@@ -118,7 +118,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div style={{ marginTop:'2.5rem', paddingTop:'1.5rem', borderTop:'1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center', fontSize:'clamp(0.72rem,2vw,0.78rem)', color:'#64748B', flexWrap:'wrap', gap:'0.5rem' }}>
-          <span>© 2025 FortitudeSistym. Todos os direitos reservados.</span>
+          <span>© 2026 FortitudeSistym. Todos os direitos reservados.</span>
           <span>Gestão de Agendamentos</span>
         </div>
       </div>
